@@ -125,7 +125,6 @@ h3 {
     flex: 1; /* Permite que el slider ocupe el espacio disponible */
     box-sizing: border-box;
     width: 100%;
-    max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
     overflow: hidden;
     margin: auto;
 }
@@ -140,7 +139,7 @@ h3 {
 
 /* Individual Slide */
 .slide {
-    flex: 0 0 33.3333%; 
+    flex: 0 0 50%; 
     box-sizing: border-box;
     padding: 0; 
     margin: 0; 
