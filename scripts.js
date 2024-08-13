@@ -10,20 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelector('.slides');
-    const slideCount = document.querySelectorAll('.slide').length;
+document.addEventListener('DOMContentLoaded', function() {
+    const slidesContainer = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    const slidesToShow = 3; // Número de imágenes que se muestran a la vez
+    const slideWidth = 33.3333; // Cada slide ocupa el 33.33% del contenedor
+    const totalGroups = Math.ceil(totalSlides / slidesToShow); // Número total de grupos
+
+    // Ajusta el ancho del contenedor para abarcar todas las imágenes
+    slidesContainer.style.width = `${slideWidth * totalSlides}%`;
+
     let currentIndex = 0;
 
-    function showNextSlides() {
-        currentIndex++;
-        if (currentIndex >= slideCount) {
-            currentIndex = 0; // Reiniciar al inicio
-        }
-        const offset = -currentIndex * 100; // Desplazamiento basado en el índice actual
-        slides.style.transform = `translateX(${offset}%)`;
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % totalGroups; // Ciclo continuo
+        const offset = -currentIndex * (slideWidth * slidesToShow); // Ajusta el desplazamiento
+        slidesContainer.style.transform = `translateX(${offset}%)`;
     }
 
-    // Configura el intervalo para cambiar las imágenes automáticamente
-    setInterval(showNextSlides, 3000); // Cambiar cada 3 segundos
+    setInterval(showNextSlide, 3000); // Cambia cada 3 segundos
 });
