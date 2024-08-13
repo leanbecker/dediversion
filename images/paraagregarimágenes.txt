@@ -1,0 +1,9 @@
+Guarda las imágenes y logos en una carpeta llamada images dentro de tu carpeta principal del proyecto. Luego, puedes añadir las imágenes a las galerías en el HTML, como se muestra a continuación:
+
+html
+Copiar código
+<div class="gallery">
+    <img src="images/imagen1.jpg" alt="Descripción de la imagen">
+    <img src="images/imagen2.jpg" alt="Descripción de la imagen">
+    <img src="images/imagen3.jpg" alt="Descripción de la imagen">
+</div>

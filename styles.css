@@ -1,0 +1,330 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, #500054, #ff0089);
+    margin-top: 80px;
+    padding: 0;
+    color: #f7f7f7;
+}
+
+/* Header Styles */
+header {
+    position:static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    margin-top: 0px;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar .logo img {
+    max-width: 150px; /* Adjust logo size */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2em;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: hsl(128, 97%, 60%); /* Change color on hover */
+    text-shadow: 0px 0px 8px rgba(0, 192, 250, 0.5); /* Sombra inferior del texto */
+
+}
+
+/* Menu Toggle Styles */
+.menu-toggle {
+    display: none; /* Hidden by default, show on small screens */
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Main Content Styles */
+main {
+    margin-top: 60px; /* Adjust this value if needed */
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    width: max-content;
+    display: inline-block; 
+}
+
+h3 {
+    font-size: 1.8em;
+    max-width: fit-content;
+    align-items: center;
+    overflow-wrap: break-word;
+    }
+
+/* About Section Styles */
+#about {
+    display: flex; /* Usa Flexbox para disposición en fila */
+    align-items: flex-start; /* Alinea los ítems al inicio del contenedor */
+    justify-content: space-between; /* Espacia los ítems uniformemente */
+    gap: 20px; /* Espacio entre los ítems */
+    padding: 20px; /* Espacio alrededor del contenedor */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+.text-container {
+    flex: 1; /* Permite que el contenedor de texto ocupe el espacio disponible */
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.slider {
+    flex: 1; /* Permite que el slider ocupe el espacio disponible */
+    box-sizing: border-box;
+    width: 70%;
+    max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
+    overflow: hidden;
+    margin: auto;
+}
+
+/* Slides Container */
+.slides {
+    display: flex; /* Usa flexbox para alinear las imágenes en una fila */
+    transition: transform 0.5s ease-in-out; /* Efecto suave para el cambio de imagen */
+    max-height: 25vh;
+    width: 100%;
+}
+
+/* Individual Slide */
+.slide {
+    flex: 0 0 33.3333%; /* Cada slide ocupa el 33.33% del ancho del contenedor */
+    box-sizing: border-box;
+    padding: 0; /* Asegura que no haya padding */
+    margin: 0; /* Asegura que no haya margen */
+}
+
+/* Imagen dentro del slide */
+.slide img {
+    width: 100%; /* Ocupa el 100% del ancho del slide */
+    height: 100%; /* Ocupa el 100% de la altura del slide */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
+    display: block;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: #fff;
+    background-color: transparent; /* Fondo transparente */
+    text-decoration: none;
+    border: 2px solid #fff; /* Borde blanco */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transición para un efecto suave */
+    font-size-adjust: inherit;
+
+}
+
+.btn:hover {
+    background-color: #fff; /* Fondo blanco al pasar el mouse */
+    color: #ff0089; /* Cambia el color del texto al color del botón anterior */
+    border-color: #ff0089; /* Cambia el color del borde al pasar el mouse */
+}
+
+
+.btn-about {
+    background-color: #ff457e; 
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    padding: 0.5em 1em;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+ }
+
+.service-btn {
+    background-color: #ff8f4b; /* Cheerful button color */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+}
+
+.service-btn:hover {
+    background-color: #e0783c; /* Hover color */
+}
+
+.contact-btn {
+    background-color: #4694ff; /* Contact button color */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+}
+
+.contact-btn:hover {
+    background-color: #fff; /* Fondo blanco al pasar el mouse */
+    color: #28d97d; /* Cambia el color del texto al color del botón anterior */
+    border-color: #28d97d; /* Cambia el color del borde al pasar el mouse */
+}
+
+.separator {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    border: 0; /* Elimina el borde predeterminado */
+    height: 2px; /* Ajusta el grosor de la línea */
+    background-color: #ffffff; /* Color de la línea */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+
+/* Services Section Styles */
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+    width: max-content;
+}
+
+.service-item {
+    flex: 1 1 calc(33% - 1em); /* 3 columns */
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    width: 33%;
+}
+
+.service-bg {
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Adjust height as needed */
+    position: relative;
+}
+
+.title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.service-item p {
+    margin: 0.5em 0 0;
+}
+
+/* Contact Section Styles */
+#contact {
+    text-align: center;
+    margin: 0 auto; /* Center the section */
+    max-width: 800px; /* Limit the maximum width */
+}
+
+#contact h2 {
+    margin-bottom: 0.5em;
+}
+
+#contact p {
+    margin-bottom: 1em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Ajusta el contenedor del texto */
+    .text-container {
+        width: 100%;
+    }
+
+    /* Ajusta los ítems de servicio para pantallas pequeñas */
+    #services .service-item {
+        flex: 1 1 calc(50% - 1em); /* 2 columnas en tabletas */
+    }
+
+    /* Muestra el menú de navegación en pantallas pequeñas */
+    .nav-links {
+        display: none; /* Oculta por defecto */
+        position: absolute;
+        top: 60px; /* Ajusta según el tamaño del header */
+        right: 0;
+        background: rgba(0, 0, 0, 0.9); /* Fondo negro traslúcido */
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .nav-links li {
+        padding: 1em;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajusta los ítems de servicio para móviles */
+    #services .service-item {
+        flex: 1 1 100%; /* 1 columna en móviles */
+    }
+
+    /* Ajusta el tamaño del logo para pantallas más pequeñas si es necesario */
+    .navbar .logo img {
+        max-width: 120px; /* Ajusta según sea necesario */
+    }
+}
