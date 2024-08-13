@@ -9,24 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.classList.toggle('open'); // Optional: for animation effect
     });
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-    const slidesContainer = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slide').length;
-    const slidesToShow = 3; // Número de imágenes que se muestran a la vez
-    const slideWidth = 33.3333; // Cada slide ocupa el 33.33% del contenedor
-    const totalGroups = Math.ceil(totalSlides / slidesToShow); // Número total de grupos
-
-    // Ajusta el ancho del contenedor para abarcar todas las imágenes
-    slidesContainer.style.width = `${slideWidth * totalSlides}%`;
-
-    let currentIndex = 0;
-
-    function showNextSlide() {
-        currentIndex = (currentIndex + 1) % totalGroups; // Ciclo continuo
-        const offset = -currentIndex * (slideWidth * slidesToShow); // Ajusta el desplazamiento
-        slidesContainer.style.transform = `translateX(${offset}%)`;
-    }
-
-    setInterval(showNextSlide, 3000); // Cambia cada 3 segundos
-});
+    
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        const slidesContainer = document.querySelector('.slides');
+        const slides = document.querySelectorAll('.slide');
+        const slideCount = slides.length;
+        const slidesToShow = 2; // Número de imágenes visibles a la vez
+        const slideWidth = 200 / slidesToShow;
+        
+        let currentIndex = 0;
+        let totalSlides = Math.ceil(slideCount / slidesToShow);
+                                    
+        function updateSlides() {
+            const offset = - (currentIndex * slideWidth) + '%';
+            slidesContainer.style.transform = `translateX(${offset})`;
+        }
+        
+        function goToNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlides();                     
+        }
+        
+        // Configura el intervalo para el cambio automático
+        setInterval(goToNextSlide, 3000); // Cambia cada 3 segundos
+        
+        // Inicializa la vista
+        updateSlides();
+    });
+    
