@@ -118,12 +118,13 @@ h3 {
     flex: 1; /* Permite que el contenedor de texto ocupe el espacio disponible */
     padding: 1em;
     box-sizing: border-box;
+    text-align: justify;
 }
 
 .slider {
     flex: 1; /* Permite que el slider ocupe el espacio disponible */
     box-sizing: border-box;
-    width: 70%;
+    width: 100%;
     max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
     overflow: hidden;
     margin: auto;
@@ -131,18 +132,18 @@ h3 {
 
 /* Slides Container */
 .slides {
-    display: flex; /* Usa flexbox para alinear las imágenes en una fila */
-    transition: transform 0.5s ease-in-out; /* Efecto suave para el cambio de imagen */
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
     max-height: 25vh;
-    width: 100%;
+    width: 100%; 
 }
 
 /* Individual Slide */
 .slide {
-    flex: 0 0 33.3333%; /* Cada slide ocupa el 33.33% del ancho del contenedor */
+    flex: 0 0 33.3333%; 
     box-sizing: border-box;
-    padding: 0; /* Asegura que no haya padding */
-    margin: 0; /* Asegura que no haya margen */
+    padding: 0; 
+    margin: 0; 
 }
 
 /* Imagen dentro del slide */
@@ -176,7 +177,7 @@ h3 {
 
 .btn-about {
     background-color: #ff457e; 
-    display: flex;
+    display: inline-flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center;     /* Centra verticalmente */
     padding: 0.5em 1em;
@@ -200,7 +201,7 @@ h3 {
 
 .contact-btn {
     background-color: #4694ff; /* Contact button color */
-    display: flex;
+    display: inline-flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center;     /* Centra verticalmente */
 }
@@ -209,6 +210,10 @@ h3 {
     background-color: #fff; /* Fondo blanco al pasar el mouse */
     color: #28d97d; /* Cambia el color del texto al color del botón anterior */
     border-color: #28d97d; /* Cambia el color del borde al pasar el mouse */
+}
+
+.contact-btn img {
+    margin-right: 0.75em; /* Aumenta el margen para separar más el ícono y el texto */
 }
 
 .separator {
@@ -225,7 +230,9 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    text-align: center;
 }
+
 
 .service-grid {
     display: flex;
@@ -233,6 +240,7 @@ h3 {
     gap: 1em;
     justify-content: space-between;
     width: max-content;
+    text-align: center;
 }
 
 .service-item {
@@ -240,6 +248,7 @@ h3 {
     box-sizing: border-box;
     margin-bottom: 1em;
     width: 33%;
+    text-align: center; /* Centers text in each service item */
 }
 
 .service-bg {
@@ -258,6 +267,15 @@ h3 {
     color: #fff;
     padding: 10px;
     text-align: center;
+}
+
+
+/* Styles for the h3 titles within the service items */
+.service-item h3 {
+    margin: 0; /* Remove default margin */
+    padding: 10px; /* Add some padding if needed */
+    text-align: center; /* Center align the text */
+    font-size: 2em; /* Adjust font size if needed */
 }
 
 .service-item p {
@@ -326,5 +344,18 @@ h3 {
     /* Ajusta el tamaño del logo para pantallas más pequeñas si es necesario */
     .navbar .logo img {
         max-width: 120px; /* Ajusta según sea necesario */
+    }
+}
+
+/* Ajusta la disposición en dispositivos móviles */
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column; /* Cambia a disposición en columna */
+        align-items: center; /* Centra los ítems en la columna */
+    }
+
+    .slider {
+        margin-top: 20px; /* Añade espacio entre el texto y la galería */
+        width: 100%; /* Asegura que la galería ocupe todo el ancho disponible */
     }
 }
